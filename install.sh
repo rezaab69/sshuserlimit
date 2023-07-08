@@ -25,4 +25,5 @@ fi
 
 sudo wget -O /usr/local/bin/InoVPN-Single-User.sh "https://github.com/rezaab69/sshuserlimit/raw/main/InoVPN-Single-User.sh"
 sudo chmod +x /usr/local/bin/InoVPN-Single-User.sh
-sudo echo "\n\naccount    required     pam_exec.so /usr/local/bin/InoVPN-Single-User.sh\nauth       required     pam_exec.so /usr/local/bin/InoVPN-Single-User.sh" >> /etc/pam.d/sshd
+sudo echo "auth       required     pam_exec.so /usr/local/bin/InoVPN-Single-User.sh" >> /etc/pam.d/sshd
+sudo echo "account    required     pam_exec.so /usr/local/bin/InoVPN-Single-User.sh" >> /etc/pam.d/sshd
