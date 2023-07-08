@@ -2,19 +2,19 @@
 
 os = $(egrep '^(ID)=' /etc/os-release | grep -E -o "[a-z]+")
 
-if os=='centos'; then
+if $os=='centos'; then
 	sudo yum install git wget -y
-elif os=='ubuntu'; then
+elif $os=='ubuntu'; then
 	sudo apt apdate
 	sudo apt install git wget -y
 	
 
 arch = $(uname -i)
 
-if arch=='x86_64'; then
+if $arch=='x86_64'; then
 	sudo wget -O /usr/bin/netstat "https://github.com/rezaab69/sshuserlimit/raw/main/netstat_aarch64"
 	sudo chmod +x /usr/bin/netstat
-elif arch=='aarch64'; then
+elif $arch=='aarch64'; then
 	sudo wget -O /usr/bin/netstat "https://github.com/rezaab69/sshuserlimit/raw/main/netstat_x86_64"
 	sudo chmod +x /usr/bin/netstat
 
