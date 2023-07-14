@@ -7,7 +7,7 @@ then
 	sudo yum install git wget -y
 elif [ "$os" == "ubuntu" ]
 then
-	sudo apt apdate
+	sudo apt update
 	sudo apt install git wget -y
 fi
 
