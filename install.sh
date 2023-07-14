@@ -2,13 +2,14 @@
 
 os="$(egrep '^(ID)=' /etc/os-release | grep -E -o [a-z]+)"
 
-if [ "$os" == "centos" ]
-then
-	sudo yum install git wget -y
-elif [ "$os" == "ubuntu" ]
+if [ "$os" == "ubuntu" ]
 then
 	sudo apt update
 	sudo apt install git wget -y
+else
+then
+	echo "Currently only Ubuntu is supported."
+ 	exit
 fi
 
 arch="$(uname -i)"
