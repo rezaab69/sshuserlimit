@@ -6,10 +6,10 @@ if [ "$os" == "ubuntu" ]
 then
 	sudo apt update
 	sudo apt install git wget -y
-else
+elif [ "$os" == "centos" ]
 then
-	echo "Currently only Ubuntu is supported."
- 	exit
+	sudo yum update
+	sudo yum install git wget -y
 fi
 
 arch="$(uname -i)"
